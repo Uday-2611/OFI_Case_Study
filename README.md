@@ -42,8 +42,8 @@ An AI-powered predictive analytics platform that transforms reactive delivery ma
 
 1. **Clone the repository**
 ```bash
-git clone <repository-url>
-cd nexgen-logistics-optimizer
+git clone https://github.com/Uday-2611/OFI_Case_Study.git
+cd OFI_Case_Study
 ```
 
 2. **Install dependencies**
@@ -62,25 +62,23 @@ Open your browser and navigate to `http://localhost:8501`
 ## 📁 Project Structure
 
 ```
-nexgen-logistics-optimizer/
+OFI_Case_Study/
 ├── app.py                          # Main Streamlit application
 ├── data_processor.py               # Data loading and preprocessing
 ├── ml_models.py                    # Machine learning models
 ├── visualizations.py              # Chart generation functions
 ├── requirements.txt               # Python dependencies
 ├── README.md                      # This file
-├── Case study internship data/    # Data files
-│   ├── orders.csv
-│   ├── delivery_performance.csv
-│   ├── routes_distance.csv
-│   ├── vehicle_fleet.csv
-│   ├── warehouse_inventory.csv
-│   ├── customer_feedback.csv
-│   └── cost_breakdown.csv
-└── models/                        # Trained ML models (auto-generated)
-    ├── classifier.pkl
-    ├── regressor.pkl
-    └── label_encoder.pkl
+├── run_app.bat                    # Easy startup script (Windows)
+├── .gitignore                     # Git ignore file
+└── Case study internship data/    # Data files
+    ├── orders.csv
+    ├── delivery_performance.csv
+    ├── routes_distance.csv
+    ├── vehicle_fleet.csv
+    ├── warehouse_inventory.csv
+    ├── customer_feedback.csv
+    └── cost_breakdown.csv
 ```
 
 ## 🔧 Technical Architecture
@@ -221,18 +219,31 @@ MODEL_PATH=models/
 
 ### Local Deployment
 ```bash
-streamlit run app.py --server.port 8501
+# Method 1: Using batch file (Windows)
+run_app.bat
+
+# Method 2: Using Python module
+python -m streamlit run app.py --server.port 8501
+
+# Method 3: Direct execution
+python app.py
 ```
 
-### Production Deployment
-```bash
-# Using Docker
-docker build -t nexgen-logistics-optimizer .
-docker run -p 8501:8501 nexgen-logistics-optimizer
+### Streamlit Cloud Deployment (Recommended)
+1. **Fork this repository** or push to your own GitHub repository
+2. **Go to [Streamlit Cloud](https://share.streamlit.io)**
+3. **Click "New app"**
+4. **Connect your GitHub account**
+5. **Select this repository**
+6. **Set main file to `app.py`**
+7. **Click "Deploy!"**
 
-# Using Streamlit Cloud
-# Deploy directly to Streamlit Cloud
-```
+Your app will be live at: `https://your-app-name.streamlit.app`
+
+### Alternative Deployment Options
+- **Heroku:** Free tier available
+- **Google Cloud Platform:** Pay-as-you-use pricing
+- **AWS:** Various pricing options based on usage
 
 ## 📚 API Documentation
 
